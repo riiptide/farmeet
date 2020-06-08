@@ -1,0 +1,8 @@
+:global(.button).search-button {
+    background: darkgreen;
+    border:none;
+}
+
+:global(.icon) {
+    color:white;
+}
