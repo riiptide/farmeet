@@ -6,7 +6,7 @@ import {SearchBar} from "../SearchBar/SearchBar";
 export function LandingPage() {
 
     return (
-        <div>
+        <div className={styles[`search-area`]}>
             <TopNav/>
             <img src={logo} className={styles.logo} alt='logo' />
             <SearchBar/>
