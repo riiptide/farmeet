@@ -11,7 +11,7 @@ export function SearchResult() {
             <div className={styles['business-info']}>
                 <h2 className= "subtitle"> burger </h2>
                 <p>rating</p>
-                <p>$$ <span class = "tag"> tag label </span></p>
+                <p>$$ <span className = "tag"> tag label </span></p>
             </div>
 
 

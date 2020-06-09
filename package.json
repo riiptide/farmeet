@@ -13,7 +13,9 @@
     "react-router": "latest",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
-    "use-react-router": "^1.0.7"
+    "use-react-router": "^1.0.7",
+    "use-React-Router": "latest",
+    "use-React-Router": "latest"
   },
   "scripts": {
     "start": "react-scripts start",
