@@ -1,0 +1,19 @@
+.logo {
+    width: 75px;
+    margin-right: 1rem;
+    margin-left: 1rem;
+
+
+}
+
+.nav-bar {
+    display: flex;
+    background-color: green;
+    padding: 1rem 0;
+    align-items: center;
+    justify-content: center;
+}
+
+:global(.button).nav-button {
+margin-left: 1rem;
+}
