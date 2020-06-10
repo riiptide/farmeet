@@ -1,8 +1,18 @@
-:global(.button).search-button {
-    background: darkgreen;
-    border:none;
+.input-control {
+    min-width: 320px;
 }
 
-:global(.icon) {
-    color:white;
+:global(.button).search-button {
+    background: #4ab04c;
+    border: none;
+}
+
+:global(.icon).search-icon {
+    color: white;
+}
+
+:global(.checkboxes){
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
 }
