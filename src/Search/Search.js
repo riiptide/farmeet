@@ -13,18 +13,33 @@ export function Search() {
     const locationParam = params.get('find_loc');
     const products = params.get('products');
     const credit = params.get('credit');
-    const [businesses, amountResults, searchParams, performSearch] = useBusinessSearch(term, locationParam,products,credit);
+    const WIC = params.get('WIC');
+    const WICcash = params.get('WICcash');
+    const SFMNP = params.get('SFMNP');
+    const SNAP = params.get('SNAP');
+    const Organic = params.get('Organic');
+
+    const [businesses, amountResults, searchParams, performSearch] = useBusinessSearch(term, locationParam,products,credit,WIC,WICcash,SFMNP,SNAP,Organic);
 
     if (!term || !locationParam) {
         history.push('/');
     }
 
-    function search(term, location,products,credit) {
+    function search(term, location,products,credit,WIC,WICcash,SFMNP,SNAP,Organic) {
         const encodedTerm = encodeURI(term);
         const encodedLocation = encodeURI(location);
         const encodedProducts = encodeURI(products);
-        history.push(`/search?find_desc=${encodedTerm}&find_loc=${encodedLocation}&products=${encodedProducts}&credit=${credit}`);
-        performSearch({term, location, products,credit});
+        const encodedCredit = encodeURI(credit);
+        const encodedWIC = encodeURI(WIC);
+        const encodedWICcash = encodeURI(WICcash);
+        const encodedSFMNP = encodeURI(SFMNP);
+        const encodedSNAP = encodeURI(SNAP);
+        const encodedOrganic = encodeURI(Organic);
+
+
+        history.push(`/search?find_desc=${encodedTerm}&find_loc=${encodedLocation}&products=${encodedProducts}&credit=${encodedCredit}
+        &WIC=${encodedWIC}&WICcash=${encodedWICcash}&SFMNP=${encodedSFMNP}&SNAP=${encodedSNAP}&Organic=${encodedOrganic}`);
+        performSearch({term, location, products, credit, WIC, WICcash, SFMNP, SNAP, Organic});
     }
 
     return (
@@ -35,6 +50,11 @@ export function Search() {
                                   location={searchParams.location}
                                   products={searchParams.products}
                                   credit={searchParams.credit}
+                                  WIC={searchParams.WIC}
+                                  WICcash={searchParams.WICcash}
+                                  SFMNP={searchParams.SFMNP}
+                                  SNAP={searchParams.SNAP}
+                                  Organic={searchParams.Organic}
                                   amountResults={amountResults}
                                   shownResults={businesses ? businesses.length : 0}
             />

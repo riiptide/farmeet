@@ -9,7 +9,8 @@ export function SearchResultsSummary(props) {
     return (
         <div className={styles.container}>
             <div className={styles['search-summary']}>
-                <h1 className='subtitle'><strong>{props.term}</strong> {props.location} {props.products} {props.credit}</h1>
+                <h1 className='subtitle'><strong>{props.term}</strong> {props.location} {props.products} {props.credit}
+                {props.WIC} {props.WICcash} {props.SFMNP} {props.SNAP} {props.Organic}</h1>
                 {resultStats}
             </div>
             <div className={styles.filters}>

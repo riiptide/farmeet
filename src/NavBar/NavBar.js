@@ -8,7 +8,9 @@ export function NavBar(props) {
     return (
         <div className={styles['nav-bar']}>
             <Link to='/'><img src={logo} className={styles.logo} alt='belb logo' /></Link>
-            <SearchBar small term={props.term}  products={props.products} location={props.location} search={props.search} credit={props.credit}/>
+            <SearchBar small term={props.term}  products={props.products} location={props.location} search={props.search} credit={props.credit}
+                       WIC={props.WIC} WICcash={props.WICcash} SFMNP={props.SFMNP} SNAP={props.SNAP} Organic={props.Organic}
+            />
             <button className={`button ${styles['nav-button']}`}>Sign In</button>
             <button className={`button ${styles['nav-button']}`}>Register</button>
         </div>

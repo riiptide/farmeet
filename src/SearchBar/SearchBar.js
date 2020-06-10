@@ -24,6 +24,11 @@ export function SearchBar(props) {
     const [location, setLocation] = useState(props.location || '');
     const [products, setProducts] = useState(props.products || '');
     const [credit, setCredit] = useState(!!props.credit );
+    const [WIC, setWIC] = useState(!!props.WIC );
+    const [WICcash, setWICcash] = useState(!!props.WICcash );
+    const [SFMNP, setSFMNP] = useState(!!props.SFMNP );
+    const [SNAP, setSNAP] = useState(!!props.SNAP );
+    const [Organic, setOrganic] = useState(!!props.Organic );
     const classes = useStyles();
 
     const [open, setOpen] = React.useState(false);
@@ -42,9 +47,9 @@ export function SearchBar(props) {
 
     function submit(e) {
         if(typeof props.search === 'function') {
-            props.search(term, location,products,credit);
+            props.search(term, location,products,credit,WIC,WICcash,SFMNP,SNAP,Organic);
         }
-        console.log(term, location,products,credit);
+        console.log(term, location,products,credit,WIC,WICcash,SFMNP,SNAP,Organic);
         e.preventDefault();
     }
 
@@ -172,8 +177,8 @@ export function SearchBar(props) {
                     <div className="field-body">
                         <div className="field">
                             <div className="control">
-                                <label className="checkbox"> <input type="checkbox" name={'WIC'}/>
-                                    WIC? </label>
+                                <label className="checkbox"> <input type="checkbox" checked={WIC} onChange={(e) => setWIC(e.target.checked?1:0)}/>
+                                    WIC? {WIC} </label>
                             </div>
                         </div>
                     </div>
