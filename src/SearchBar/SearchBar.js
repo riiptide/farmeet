@@ -50,10 +50,58 @@ export function SearchBar(props) {
 
     const sizeClass = props.small ? '' : 'is-medium';
     return (
-        <form onSubmit={submit} className={classes.formControl}>
+        <div>
+        <FormControl onSubmit={submit} className={classes.formControl}>
 
-            <Button color="primary">Hello World</Button>
+            <div>
+                <InputLabel id="productslabel">Select Products</InputLabel>
+                <Select
+                    labelid="productslabel"
+                    id="products"
+                    open={open}
+                    onClose={handleClose}
+                    onOpen={handleOpen}
+                    value={products}
+                    onChange={handleChange}
+                >
 
+                        <MenuItem value="">
+                            <em>None</em>
+                        </MenuItem>
+                        <MenuItem value={10}>Ten</MenuItem>
+                        <MenuItem value={20}>Twenty</MenuItem>
+                        <MenuItem value={30}>Thirty</MenuItem>
+                        <MenuItem value="BakedGoods">Baked Goods</MenuItem>
+                        <MenuItem value="Cheese">Cheese</MenuItem>
+                        <MenuItem value="Crafts">Crafts</MenuItem>
+                        <MenuItem value="Flowers">Flowers</MenuItem>
+                        <MenuItem value="Eggs">Eggs</MenuItem>
+                        <MenuItem value="Seafood">Seafood</MenuItem>
+                        <MenuItem value="Herbs">Herbs</MenuItem>
+                        <MenuItem value="Vegetables">Vegetables</MenuItem>
+                        <MenuItem value="Honey">Honey</MenuItem>
+                        <MenuItem value="Jams">Jams</MenuItem>
+                        <MenuItem value="Maple">Maple</MenuItem>
+                        <MenuItem value="Meat">Meat</MenuItem>
+                        <MenuItem value="Nursery">Nursery</MenuItem>
+                        <MenuItem value="Nuts">Nuts</MenuItem>
+                        <MenuItem value="Plants">Plants</MenuItem>
+                        <MenuItem value="Poultry">Poultry</MenuItem>
+                        <MenuItem value="Prepared">Prepared</MenuItem>
+                        <MenuItem value="Soap">Soap</MenuItem>
+                        <MenuItem value="Trees">Trees</MenuItem>
+                        <MenuItem value="Wine">Wine</MenuItem>
+                        <MenuItem value="Coffee">Coffee</MenuItem>
+                        <MenuItem value="Beans">Beans</MenuItem>
+                        <MenuItem value="Fruits">Fruits</MenuItem>
+                        <MenuItem value="Grains">Grains</MenuItem>
+                        <MenuItem value="Juice">Juice</MenuItem>
+                        <MenuItem value="Mushrooms">Mushrooms</MenuItem>
+                        <MenuItem value="PetFood">PetFood</MenuItem>
+                        <MenuItem value="Tofu">Tofu</MenuItem>
+                        <MenuItem value="WildHarvested">Wild Harvested</MenuItem>
+                </Select>
+</div>
             <div className="field has-addons">
                 <div className = "control">
                 <div className="select is-multiple">
@@ -198,6 +246,7 @@ export function SearchBar(props) {
                     <span className={`icon is-small ${styles['search-icon']}`}><i className="fas fa-search"></i></span>
                 </div>
             </div>
-        </form>
+        </FormControl>
+        </div>
     );
 }
