@@ -1,5 +1,5 @@
-export const API_BASE_URL = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3';
-
+// export const API_BASE_URL = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3';
+export const API_BASE_URL = 'https://cors-anywhere.herokuapp.com/https://farmeet-app.herokuapp.com';
 // FIXME: remove this token
 // NOTE: as long as this token is saved in the frontend, the application is not production ready.
 // The Baerer token must be used on a server whose inner workings are not exposed to the outside world

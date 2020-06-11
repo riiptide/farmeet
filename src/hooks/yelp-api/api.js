@@ -42,7 +42,7 @@ let url = `${API_BASE_URL}${path}?${query}`;
     return fetch(url, {
         headers: {
             Authorization: `Bearer ${BEARER_TOKEN}`,
-            Origin: 'localhost',
+            Origin: 'localhost:3000',
             withCredentials: true,
         }
     });

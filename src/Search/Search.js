@@ -12,7 +12,7 @@ export function Search() {
     const term = params.get('find_desc');
     const locationParam = params.get('find_loc');
     const products = params.get('products');
-    const credit = params.get('credit');
+    const Credit = params.get('Credit');
     const WIC = params.get('WIC');
     const WICcash = params.get('WICcash');
     const SFMNP = params.get('SFMNP');
@@ -21,17 +21,17 @@ export function Search() {
     const lat = 37.774929;
     const long=-122.419418;
 
-    const [businesses, amountResults, searchParams, performSearch] = useBusinessSearch(term, locationParam,products,credit,WIC,WICcash,SFMNP,SNAP,Organic,lat,long);
+    const [businesses, amountResults, searchParams, performSearch] = useBusinessSearch(term, locationParam,products,Credit,WIC,WICcash,SFMNP,SNAP,Organic,lat,long);
 
     if (!term || !locationParam) {
         history.push('/');
     }
 
-    function search(term, location,products,credit,WIC,WICcash,SFMNP,SNAP,Organic) {
+    function search(term, location,products,Credit,WIC,WICcash,SFMNP,SNAP,Organic) {
         const encodedTerm = encodeURI(term);
         const encodedLocation = encodeURI(location);
         const encodedProducts = encodeURI(products);
-        const encodedCredit = credit===true || credit === 1?1:0;
+        const encodedCredit = Credit===true || Credit === 1?1:0;
         const encodedWIC = encodeURI(WIC);
         const encodedWICcash = encodeURI(WICcash);
         const encodedSFMNP = encodeURI(SFMNP);
@@ -41,9 +41,9 @@ export function Search() {
         const encodedlong =long;
 
 
-        history.push(`/search?find_desc=${encodedTerm}&find_loc=${encodedLocation}&products=${encodedProducts}&credit=${encodedCredit}
+        history.push(`/search?find_desc=${encodedTerm}&find_loc=${encodedLocation}&products=${encodedProducts}&Credit=${encodedCredit}
 &WIC=${encodedWIC}&WICcash=${encodedWICcash}&SFMNP=${encodedSFMNP}&SNAP=${encodedSNAP}&Organic=${encodedOrganic}&x=${encodedlat}&y=${encodedlong}`);
-        performSearch({term, location, products, credit, WIC, WICcash, SFMNP, SNAP, Organic,lat,long});
+        performSearch({term, location, products, Credit, WIC, WICcash, SFMNP, SNAP, Organic,lat,long});
     }
 
     return (
@@ -53,7 +53,7 @@ export function Search() {
             <SearchResultsSummary term={searchParams.term}
                                   location={searchParams.location}
                                   products={searchParams.products}
-                                  credit={searchParams.credit}
+                                  Credit={searchParams.Credit}
                                   WIC={searchParams.WIC}
                                   WICcash={searchParams.WICcash}
                                   SFMNP={searchParams.SFMNP}

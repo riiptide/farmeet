@@ -9,11 +9,11 @@ import useReactRouter from 'use-react-router';
 export function LandingPage() {
     const {history} = useReactRouter();
 
-    function search(term, location, products,credit,WIC, WICcash,SFMNP,SNAP,Organic) {
+    function search(term, location, products,Credit,WIC, WICcash,SFMNP,SNAP,Organic) {
         const urlEncodedTerm = encodeURI(term);
         const urlEncodedLocation = encodeURI(location);
         const urlEncodedProducts = encodeURI(products);
-        const urlEncodedCredit = credit===true || credit === 1?1:0;
+        const urlEncodedCredit = Credit===true || Credit === 1?1:0;
         const urlencodedWIC = WIC===true || WIC === 1?1:0;
         const urlencodedWICcash = WICcash===true || WICcash === 1?1:0;
         const urlencodedSFMNP = SFMNP===true || SFMNP === 1?1:0;
