@@ -23,7 +23,7 @@ export function Search() {
 
     const [businesses, amountResults, searchParams, performSearch] = useBusinessSearch(term, locationParam,products,Credit,WIC,WICcash,SFMNP,SNAP,Organic,lat,long);
 
-    if (!term || !locationParam) {
+    if (!products) {
         history.push('/');
     }
 
