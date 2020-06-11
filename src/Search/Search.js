@@ -18,8 +18,10 @@ export function Search() {
     const SFMNP = params.get('SFMNP');
     const SNAP = params.get('SNAP');
     const Organic = params.get('Organic');
+    const lat = 37.774929;
+    const long=-122.419418;
 
-    const [businesses, amountResults, searchParams, performSearch] = useBusinessSearch(term, locationParam,products,credit,WIC,WICcash,SFMNP,SNAP,Organic);
+    const [businesses, amountResults, searchParams, performSearch] = useBusinessSearch(term, locationParam,products,credit,WIC,WICcash,SFMNP,SNAP,Organic,lat,long);
 
     if (!term || !locationParam) {
         history.push('/');
@@ -29,17 +31,19 @@ export function Search() {
         const encodedTerm = encodeURI(term);
         const encodedLocation = encodeURI(location);
         const encodedProducts = encodeURI(products);
-        const encodedCredit = encodeURI(credit);
+        const encodedCredit = credit===true || credit === 1?1:0;
         const encodedWIC = encodeURI(WIC);
         const encodedWICcash = encodeURI(WICcash);
         const encodedSFMNP = encodeURI(SFMNP);
         const encodedSNAP = encodeURI(SNAP);
         const encodedOrganic = encodeURI(Organic);
+        const encodedlat = lat;
+        const encodedlong =long;
 
 
         history.push(`/search?find_desc=${encodedTerm}&find_loc=${encodedLocation}&products=${encodedProducts}&credit=${encodedCredit}
-        &WIC=${encodedWIC}&WICcash=${encodedWICcash}&SFMNP=${encodedSFMNP}&SNAP=${encodedSNAP}&Organic=${encodedOrganic}`);
-        performSearch({term, location, products, credit, WIC, WICcash, SFMNP, SNAP, Organic});
+&WIC=${encodedWIC}&WICcash=${encodedWICcash}&SFMNP=${encodedSFMNP}&SNAP=${encodedSNAP}&Organic=${encodedOrganic}&x=${encodedlat}&y=${encodedlong}`);
+        performSearch({term, location, products, credit, WIC, WICcash, SFMNP, SNAP, Organic,lat,long});
     }
 
     return (

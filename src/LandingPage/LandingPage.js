@@ -13,14 +13,16 @@ export function LandingPage() {
         const urlEncodedTerm = encodeURI(term);
         const urlEncodedLocation = encodeURI(location);
         const urlEncodedProducts = encodeURI(products);
-        const urlEncodedCredit = encodeURI(credit);
-        const urlencodedWIC = encodeURI(WIC);
-        const urlencodedWICcash = encodeURI(WICcash);
-        const urlencodedSFMNP = encodeURI(SFMNP);
-        const urlencodedSNAP = encodeURI(SNAP);
-        const urlencodedOrganic = encodeURI(Organic);
+        const urlEncodedCredit = credit===true || credit === 1?1:0;
+        const urlencodedWIC = WIC===true || WIC === 1?1:0;
+        const urlencodedWICcash = WICcash===true || WICcash === 1?1:0;
+        const urlencodedSFMNP = SFMNP===true || SFMNP === 1?1:0;
+        const urlencodedSNAP = SNAP===true || SNAP === 1?1:0;
+        const urlencodedOrganic = Organic===true || Organic === 1?1:0;
+        const lat = 37.774929;
+        const long=-122.419418;
 
-        history.push(`/search?find_desc=${urlEncodedTerm}&find_loc=${urlEncodedLocation}&products=${urlEncodedProducts}&credit=${urlEncodedCredit}&WIC=${urlencodedWIC}&WICcash=${urlencodedWICcash}&SFMNP=${urlencodedSFMNP}&SNAP=${urlencodedSNAP}&Organic=${urlencodedOrganic}`);
+        history.push(`/search?find_desc=${urlEncodedTerm}&find_loc=${urlEncodedLocation}&products=${urlEncodedProducts}&Credit=${urlEncodedCredit}&WIC=${urlencodedWIC}&WICcash=${urlencodedWICcash}&SFMNP=${urlencodedSFMNP}&SNAP=${urlencodedSNAP}&Organic=${urlencodedOrganic}&x=${lat}&y=${long}`);
     }
 
     return (

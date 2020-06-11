@@ -22,3 +22,7 @@
 :global(.tag).business-tag {
     margin-right: 4px;
 }
+
+.searchresult-background {
+    background-color: gainsboro;
+}

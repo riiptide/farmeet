@@ -14,6 +14,7 @@ export function useBusinessSearch(term, location,products,credit, WIC, WICcash,S
                 const resp = await rawData.json();
                 setBusinesses(resp.businesses);
                 setAmountResults(resp.total);
+                console.log(rawData);
             } catch(e) {
                 console.error(e);
             }

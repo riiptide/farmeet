@@ -45,6 +45,17 @@ export function SearchBar(props) {
         setOpen(true);
     };
 
+    const handleChangeProducts = event => {
+
+            var select = event.target;
+            var selected = [...select.selectedOptions]
+                .map(option => option.value)
+                .toString();
+            console.log(selected);
+
+
+        setProducts( selected);
+    };
     function submit(e) {
         if(typeof props.search === 'function') {
             props.search(term, location,products,credit,WIC,WICcash,SFMNP,SNAP,Organic);
@@ -56,61 +67,13 @@ export function SearchBar(props) {
     const sizeClass = props.small ? '' : 'is-medium';
     return (
         <div>
-        <FormControl onSubmit={submit} className={classes.formControl}>
+        <form onSubmit={submit} >
 
-            <div>
-                <InputLabel id="productslabel">Select Products</InputLabel>
-                <Select
-                    labelid="productslabel"
-                    id="products"
-                    open={open}
-                    onClose={handleClose}
-                    onOpen={handleOpen}
-                    value={products}
-                    onChange={handleChange}
-                >
 
-                        <MenuItem value="">
-                            <em>None</em>
-                        </MenuItem>
-                        <MenuItem value={10}>Ten</MenuItem>
-                        <MenuItem value={20}>Twenty</MenuItem>
-                        <MenuItem value={30}>Thirty</MenuItem>
-                        <MenuItem value="BakedGoods">Baked Goods</MenuItem>
-                        <MenuItem value="Cheese">Cheese</MenuItem>
-                        <MenuItem value="Crafts">Crafts</MenuItem>
-                        <MenuItem value="Flowers">Flowers</MenuItem>
-                        <MenuItem value="Eggs">Eggs</MenuItem>
-                        <MenuItem value="Seafood">Seafood</MenuItem>
-                        <MenuItem value="Herbs">Herbs</MenuItem>
-                        <MenuItem value="Vegetables">Vegetables</MenuItem>
-                        <MenuItem value="Honey">Honey</MenuItem>
-                        <MenuItem value="Jams">Jams</MenuItem>
-                        <MenuItem value="Maple">Maple</MenuItem>
-                        <MenuItem value="Meat">Meat</MenuItem>
-                        <MenuItem value="Nursery">Nursery</MenuItem>
-                        <MenuItem value="Nuts">Nuts</MenuItem>
-                        <MenuItem value="Plants">Plants</MenuItem>
-                        <MenuItem value="Poultry">Poultry</MenuItem>
-                        <MenuItem value="Prepared">Prepared</MenuItem>
-                        <MenuItem value="Soap">Soap</MenuItem>
-                        <MenuItem value="Trees">Trees</MenuItem>
-                        <MenuItem value="Wine">Wine</MenuItem>
-                        <MenuItem value="Coffee">Coffee</MenuItem>
-                        <MenuItem value="Beans">Beans</MenuItem>
-                        <MenuItem value="Fruits">Fruits</MenuItem>
-                        <MenuItem value="Grains">Grains</MenuItem>
-                        <MenuItem value="Juice">Juice</MenuItem>
-                        <MenuItem value="Mushrooms">Mushrooms</MenuItem>
-                        <MenuItem value="PetFood">PetFood</MenuItem>
-                        <MenuItem value="Tofu">Tofu</MenuItem>
-                        <MenuItem value="WildHarvested">Wild Harvested</MenuItem>
-                </Select>
-</div>
             <div className="field has-addons">
                 <div className = "control">
                 <div className="select is-multiple">
-                    <select  multiple size="8"  onChange={(e) => setProducts(e.target.value)}>
+                    <select  multiple size="8"  onChange={handleChangeProducts}>
                         <option value="BakedGoods">Baked Goods</option>
                         <option value="Cheese">Cheese</option>
                         <option value="Crafts">Crafts</option>
@@ -165,7 +128,7 @@ export function SearchBar(props) {
                     <div className="field-body">
                         <div className="field">
                             <div className="control">
-                                <label className="checkbox"> <input type="checkbox" checked={credit} onChange={(e) => setCredit(e.target.checked?1:0)}/>
+                                <label className="checkbox"> <input type="checkbox" checked={credit} onChange={(e) => setCredit(e.target.checked)}/>
                                     Accepts credit card? {credit}</label>
                             </div>
                         </div>
@@ -189,8 +152,8 @@ export function SearchBar(props) {
                     <div className="field-body">
                         <div className="field">
                             <div className="control">
-                                <label className="checkbox"> <input type="checkbox" name={'WICcash'}/>
-                                    WICcash? </label>
+                                <label className="checkbox"> <input type="checkbox" checked={WICcash} onChange={(e) => setWICcash(e.target.checked?1:0)}/>
+                                    WICcash? {WICcash} </label>
                             </div>
                         </div>
                     </div>
@@ -201,8 +164,8 @@ export function SearchBar(props) {
                     <div className="field-body">
                         <div className="field">
                             <div className="control">
-                                <label className="checkbox"> <input type="checkbox" name={'SFMNP'}/>
-                                    SFMNP? </label>
+                                <label className="checkbox"> <input type="checkbox" checked={SFMNP} onChange={(e) => setSFMNP(e.target.checked?1:0)}/>
+                                    SFMNP? {SFMNP} </label>
                             </div>
                         </div>
                     </div>
@@ -213,8 +176,8 @@ export function SearchBar(props) {
                     <div className="field-body">
                         <div className="field">
                             <div className="control">
-                                <label className="checkbox"> <input type="checkbox" name={'SNAP'}/>
-                                    SNAP? </label>
+                                <label className="checkbox"> <input type="checkbox" checked={SNAP} onChange={(e) => setSNAP(e.target.checked?1:0)}/>
+                                    SNAP? {SNAP}</label>
                             </div>
                         </div>
                     </div>
@@ -225,8 +188,8 @@ export function SearchBar(props) {
                     <div className="field-body">
                         <div className="field">
                             <div className="control">
-                                <label className="checkbox"> <input type="checkbox" name={'organic'}/>
-                                    Organic? </label>
+                                <label className="checkbox"> <input type="checkbox" checked={Organic} onChange={(e) => setOrganic(e.target.checked?1:0)}/>
+                                    Organic? {Organic}</label>
                             </div>
                         </div>
                     </div>
@@ -251,7 +214,7 @@ export function SearchBar(props) {
                     <span className={`icon is-small ${styles['search-icon']}`}><i className="fas fa-search"></i></span>
                 </div>
             </div>
-        </FormControl>
+        </form>
         </div>
     );
 }
