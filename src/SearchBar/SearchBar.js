@@ -108,14 +108,14 @@ export function SearchBar(props) {
                     </select>
                 </div>
                 </div>
-                <p className="control">
-                    <button className={`button is-static ${sizeClass}`}>Search</button>
-                </p>
+                {/*<p className="control">*/}
+                {/*    <button className={`button is-static ${sizeClass}`}>Search</button>*/}
+                {/*</p>*/}
                 <p className="control">
                     <input className={`input ${sizeClass} ${styles['input-control']}`}
                            onChange={(e) => setTerm(e.target.value)}
-                           type="text"
-                           value={term}
+                           type="hidden"
+                           value='pie'
 
                     />
                 </p>
@@ -200,18 +200,18 @@ export function SearchBar(props) {
             <div>
 
 
-                <div className="control">
-                    <div className={`button is-static ${sizeClass}`}>NEAR</div>
-                </div>
+                {/*<div className="control">*/}
+                {/*    <div className={`button is-static ${sizeClass}`}>NEAR ME</div>*/}
+                {/*</div>*/}
                 <p className="control">
                     <input className={`input ${sizeClass} ${styles['input-control']}`}
                            onChange={(e) => setLocation(e.target.value)}
-                           type="text"
+                           type="hidden"
                            value={location}
                            placeholder="Where"/>
                 </p>
                 <div className={`button ${sizeClass} ${styles['search-button']}`} onClick={submit}>
-                    <span className={`icon is-small ${styles['search-icon']}`}><i className="fas fa-search"></i></span>
+                    <span className={`icon is-small ${styles['search-icon']}`}><i className="fas fa-search"></i> </span>&nbsp;&nbsp;Near Me
                 </div>
             </div>
         </form>
