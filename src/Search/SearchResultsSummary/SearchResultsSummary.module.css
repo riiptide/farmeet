@@ -1,5 +1,5 @@
 .search-summary {
-    padding: 1.5rem 0;
+    padding: .5rem 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -14,7 +14,7 @@
 }
 
 .container {
-    background: rgb(245, 245, 245);
+    background: #4AB04B;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,4 +36,9 @@
 
 :global(.tag).business-tag {
     margin-right: 4px;
+}
+
+.white {
+    color:white;
+    justify-content: center;
 }

@@ -1,15 +1,21 @@
 .nav-bar {
     display: flex;
-    background: #4ab04c;
-    padding: 1rem 0;
+    background: #d2ff96;
+    padding: 2rem 0;
     align-items: center;
     justify-content: center;
 }
 .logo {
-    width: 75px;
+    width: 15rem;
     margin-right: 1rem;
 }
 
 :global(.button).nav-button {
     margin-left: 1rem;
+}
+
+.centered{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
