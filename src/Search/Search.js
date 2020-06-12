@@ -49,7 +49,7 @@ export function Search() {
     return (
         <div>
             <NavBar term={term} location={locationParam} search={search}/>
-            <SubNav/>
+            {/*<SubNav/>*/}
             <SearchResultsSummary term={searchParams.term}
                                   location={searchParams.location}
                                   products={searchParams.products}

@@ -5,9 +5,10 @@ export function useBusinessSearch(term, location,products,Credit, WIC, WICcash,S
     let [businesses, setBusinesses] = useState([]);
     const [amountResults, setAmountResults] = useState();
     const [searchParams, setSearchParams] = useState({term, location,products,Credit, WIC,WICcash, SFMNP, SNAP, Organic,x,y });
-
+    const [loading, setLoading] = useState(false); //  to handle spinner hide show
     useEffect(() => {
         setBusinesses([]);
+        setLoading(true);
         const fetchData = async () => {
             try {
                 // const rawData = await api.get('/businesses/search', searchParams);
@@ -17,6 +18,7 @@ export function useBusinessSearch(term, location,products,Credit, WIC, WICcash,S
                 businesses = resp.markets;
                 setBusinesses(businesses);
                 setAmountResults(resp.total);
+                setLoading(false);
                 console.log(rawData);
             } catch(e) {
                 console.error(e);

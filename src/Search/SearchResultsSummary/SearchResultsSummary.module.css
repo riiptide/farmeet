@@ -33,3 +33,7 @@
 .filters > * {
     margin-right: .7rem;
 }
+
+:global(.tag).business-tag {
+    margin-right: 4px;
+}
