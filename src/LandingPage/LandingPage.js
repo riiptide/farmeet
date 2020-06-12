@@ -3,6 +3,9 @@ import { TopNav } from './TopNav/TopNav';
 import logo from '../assets/logo.png';
 import styles from './LandingPage.module.css'
 import { SearchBar } from '../SearchBar/SearchBar';
+import {Map} from  '../SearchBar/Map'
+import renderHTML from 'react-render-html';
+
 
 import useReactRouter from 'use-react-router';
 
@@ -28,10 +31,10 @@ export function LandingPage() {
     return (
         <div className={styles.landing}>
             <div className={styles['search-area']}>
-                <TopNav/>
+
                 <img src={logo} className={styles.logo} alt='logo'/>
                 <SearchBar search={search} />
-
+                 <Map/>
             </div>
         </div>
     );

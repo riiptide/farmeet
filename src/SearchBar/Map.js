@@ -11,7 +11,9 @@ var myHTML = '<iframe class="embedly-embed" src="../data_exploration_05_21_20.ht
 
 export const Map = () => (
     <div style={styles}>
-
+        {/*<div className={`button center  ${styles['search-button']}`}>*/}
+        {/*    Hold Command or Control key to select products. Select options to find nearby farmer's markets.*/}
+        {/*</div>*/}
         <div dangerouslySetInnerHTML={ {__html: myHTML}}/>
     </div>
 );
