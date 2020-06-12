@@ -68,10 +68,15 @@ export function SearchBar(props) {
         <div className="tile is-ancestor">
         <form onSubmit={submit} >
 
+
+<div className="flex>" >
                 <div className={`button center ${sizeClass} ${styles['search-button']}`}>
-                    Hold Command or Control key to select products. Select options to find nearby farmer's markets.
+                    Find the perfect farmers market with smart matching. Stay safe, eat healthy, support local vendors 💚 👩‍🌾 🛍
                 </div>
 
+    <h1>    </h1>
+    Hold the command or Control key to select products. Scroll for more. Select options to find nearby farmer's markets. Happy browsing!
+</div>
                 <div className="tile is-parent">
 
                     <div className="field has-addons tile  is-child box is-6">

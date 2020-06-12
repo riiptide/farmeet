@@ -19,6 +19,7 @@
     flex-direction: column;
     align-items: center;
     border-bottom: rgb(230, 230, 230);
+    padding-bottom: 1rem;
 }
 
 .container > * {
