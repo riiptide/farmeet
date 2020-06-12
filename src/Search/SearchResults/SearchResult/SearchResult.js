@@ -8,6 +8,7 @@ export function SearchResult(props) {
     if (!b) {
         return (<div/>);
     }
+
     // <div>
     //     <span className={`tag ${styles['business-tag']}`} >Baked Goods 🥧 </span>
     //     <span className={`tag ${styles['business-tag']}`}>Cheese 🧀 </span>
@@ -45,11 +46,16 @@ export function SearchResult(props) {
     // const addressLines = b.location.display_address.map(addressLine => <p key={b.id + addressLine}>{addressLine}</p>);
     const addressLines = b.street;
 
+    var random_images_array = ["https://blacksburgfarmersmarket.com/wp-content/uploads/2019/03/vendor-duck-eggs-2019-slide.jpg", "https://onmilwaukee.com/images/articles/fa/farmers-markets-guide/farmers-markets-guide_fullsize_story1.jpg?20200611182223",
+        "https://infinityrimapts.com/wp-content/uploads/2017/11/iStock-160017498.jpg", "https://blacksburgfarmersmarket.com/wp-content/uploads/2016/01/Greenhouse-.jpg", "https://wnavprd.blob.core.windows.net/images/guide/farmers-market-juice-fresh-local-432-s.jpg", "https://s3.amazonaws.com/images.hamlethub.com/hh20mediafolder/2745/201511/River_Garden_Dried_v2_600px.jpg", ];
+
+
     return (
 
 
         <div className={styles['search-result']}>
-            <img src={b.image_url} alt='business' className={styles['business-image']}/>
+            {/*<img src={b.image_url} alt='business' className={styles['business-image']}/>*/}
+            <img src={'https://blacksburgfarmersmarket.com/wp-content/uploads/2019/03/vendor-duck-eggs-2019-slide.jpg'} alt='business' className={styles['business-image']}/>
             <div className={styles['business-info']}>
 
                 <h2 className="subtitle"> <a href={b.Website}><strong>{b.MarketName} </strong></a></h2>
