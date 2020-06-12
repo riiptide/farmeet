@@ -66,7 +66,7 @@ export function SearchBar(props) {
         <div className="tile is-ancestor">
             <form onSubmit={submit}>
 
-                <div className={`button center ${sizeClass}`}>
+                <div className={`button center ${sizeClass} ${styles['search-button']}`}>
                     Select products and options to find nearby farmer's markets
                 </div>
 
