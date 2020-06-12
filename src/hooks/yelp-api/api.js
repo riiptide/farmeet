@@ -13,24 +13,24 @@ export function get(path, queryParams) {
     // fetch('https://json.geoiplookup.io/api',{
 
     // fetch('http://api.hostip.info/get_html.php',{
-    // fetch('http://ip-api.com/json', {
-    //     headers: {
-    //
-    //         mode: 'no-cors',
-    //         Origin: 'localhost:3000',
-    //
-    //     }
-    // })
-    //     .then(res => res.json())
-    //     .then(json => {
-    //         console.log({data: json.lat + ',' + json.lon});
-    //
-    //
-    //         lat = json.lat;
-    //
-    //         lon = json.lon;
-    //         console.log(lat + ',' + lon)
-    //     })
+    fetch('http://ip-api.com/json', {
+        headers: {
+
+            mode: 'no-cors',
+            Origin: 'localhost:3000',
+
+        }
+    })
+        .then(res => res.json())
+        .then(json => {
+            console.log({data: json.lat + ',' + json.lon});
+
+
+            lat = json.lat;
+
+            lon = json.lon;
+            console.log(lat + ',' + lon)
+        })
 
 
 

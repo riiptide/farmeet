@@ -167,31 +167,40 @@ export function SearchBar(props) {
 
 
 
-            </div>
-            <div className="hi">
-                <div className={`button ${sizeClass} ${styles['search-button']}`} onClick={submit}>
-                    <span className={`icon is-small ${styles['search-icon']}`}><i className="fas fa-search"></i> </span>&nbsp;&nbsp;Near Me
-                </div>
-            </div>
-            <div>
 
 
                 {/*<div className="control">*/}
                 {/*    <div className={`button is-static ${sizeClass}`}>NEAR ME</div>*/}
                 {/*</div>*/}
 
+
+
+                </div>
+
+            <div className="flex">
+
+
+
                 <p className="control">
                     <input className={`input ${sizeClass} ${styles['input-control']}`}
                            onChange={(e) => setx(e.target.value)}
 
                            value={x}
-                           placeholder="latitude"/>
+                           placeholder="city, state, zip code"/>
                 </p>
-
-                <p className="control">
+                <br></br>
+                <div className="hi">
+                    <div className={`button ${sizeClass} ${styles['search-button']}`} onClick={submit}>
+                        <span className={`icon is-small ${styles['search-icon']}`}><i className="fas fa-search"></i> </span>&nbsp;&nbsp;Near Me
+                    </div>
+                </div>
+                <div>
+                    <br></br>
+            </div>
+            <p className="control">
                     <input className={`input ${sizeClass} ${styles['input-control']}`}
                            onChange={(e) => sety(e.target.value)}
-
+                            type = "hidden"
                            value={y}
                            placeholder="longitude"/>
                 </p>
