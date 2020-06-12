@@ -52,7 +52,8 @@ export function SearchResult(props) {
             <img src={b.image_url} alt='business' className={styles['business-image']}/>
             <div className={styles['business-info']}>
 
-                <h2 className="subtitle"><strong>{b.MarketName} </strong>- {b.sim_pct}% Match </h2>
+                <h2 className="subtitle"> <a href={b.Website}><strong>{b.MarketName} </strong></a></h2>
+                <i>{b.sim_pct} <i className="fas fa-percent"></i> Match to your search</i>
                 {/*<BusinessRating reviewCount={b.review_count} rating={b.rating}/>*/}
                 {/*<p> {tags} </p>*/}
                 <div>
@@ -86,9 +87,16 @@ export function SearchResult(props) {
                     {b.Tofu==='Y'?<span className={`tag ${styles['business-tag']}`}>Tofu 🥟</span>:''}
                     {b.WildHarvested==='Y'?<span className={`tag ${styles['business-tag']}`}>Wild Harvested 🍇🥦</span>:''}
                 </div>
+                <div>
+                    {b.Credit?<span className={`tag ${styles['business-tag']}`}>Credit Card </span>:''}
+                    {b.WIC==='Y'?<span className={`tag ${styles['business-tag']}`}>WIC  </span>:''}
+                    {b.WICcash==='Y'?<span className={`tag ${styles['business-tag']}`}>WICcash </span>:''}
+                    {b.SFMNP==='Y'?<span className={`tag ${styles['business-tag']}`}>SFMNP </span>:''}
+                    {b.SNAP==='Y'?<span className={`tag ${styles['business-tag']}`}>SNAP </span>:''}
+                    {b.Organic==='Y'?<span className={`tag ${styles['business-tag']}`}>Organic </span>:''}
 
-                <br></br>
-                <a href={b.Website}> {b.Website} </a>
+                </div>
+
             </div>
             <div className={styles['contact-info']}>
                 <p>{b.phone}</p>
@@ -96,10 +104,6 @@ export function SearchResult(props) {
                 <p>{b.city} {b.zip}, {b.State}</p>
             </div>
 
-            <div className={styles['contact-info']}>
-                <p> WIC-check</p>
-                <p> Organic-Check </p>
-            </div>
 
         </div>
 
