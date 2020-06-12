@@ -6,6 +6,7 @@ import { SearchResults } from './SearchResults/SearchResults';
 import useReactRouter from 'use-react-router';
 import {useBusinessSearch} from '../hooks/yelp-api/useBusinessSearch';
 
+
 export function Search() {
     const {location, history} = useReactRouter();
     const params = new URLSearchParams(location.search);

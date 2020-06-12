@@ -5,6 +5,8 @@
 :global(.button).search-button {
     background: #4ab04c;
     border: none;
+    color: white;
+
 }
 
 :global(.icon).search-icon {
@@ -15,4 +17,10 @@
     display: flex;
     flex-direction: column;
     margin: 1rem;
+}
+
+.hi {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

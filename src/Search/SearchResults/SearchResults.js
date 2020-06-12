@@ -10,16 +10,10 @@ export function SearchResults(props) {
            <div >
                <section className="section">
                    <div className="container centered">
-                       <button className="button is-loading">Loading</button>
-                       <button className="button is-loading">Loading</button>
-                       <button className="button is-loading">Loading</button>
-                       <button className="button is-loading">Loading</button>
-                       <button className="button is-primary is-loading">Loading</button>
-                       <button className="button is-link is-loading">Loading</button>
-                       <button className="button is-info is-loading">Loading</button>
-                       <button className="button is-success is-loading">Loading</button>
-                       <button className="button is-warning is-loading">Loading</button>
-                       <button className="button is-danger is-loading">Loading</button>
+
+                       <progress className="progress is-medium is-success" max="50">60%</progress>
+
+
                    </div>
                </section>
 

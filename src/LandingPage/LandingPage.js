@@ -3,6 +3,8 @@ import { TopNav } from './TopNav/TopNav';
 import logo from '../assets/logo.png';
 import styles from './LandingPage.module.css'
 import { SearchBar } from '../SearchBar/SearchBar';
+import renderHTML from 'react-render-html';
+
 
 import useReactRouter from 'use-react-router';
 
@@ -25,13 +27,14 @@ export function LandingPage() {
         history.push(`/search?find_desc=${urlEncodedTerm}&find_loc=${urlEncodedLocation}&products=${urlEncodedProducts}&Credit=${urlEncodedCredit}&WIC=${urlencodedWIC}&WICcash=${urlencodedWICcash}&SFMNP=${urlencodedSFMNP}&SNAP=${urlencodedSNAP}&Organic=${urlencodedOrganic}&x=${lat}&y=${long}`);
     }
 
+
     return (
         <div className={styles.landing}>
             <div className={styles['search-area']}>
                 <TopNav/>
                 <img src={logo} className={styles.logo} alt='logo'/>
                 <SearchBar search={search} />
-
+            <map/>
             </div>
         </div>
     );

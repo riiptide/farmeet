@@ -8,11 +8,11 @@ export function NavBar(props) {
     return (
         <div className={styles['nav-bar']}>
             <Link to='/'><img src={logo} className={styles.logo} alt='belb logo' /></Link>
+            <div className="centered">
             <SearchBar small term={props.term}  products={props.products} location={props.location} search={props.search} Credit={props.Credit}
                        WIC={props.WIC} WICcash={props.WICcash} SFMNP={props.SFMNP} SNAP={props.SNAP} Organic={props.Organic}
             />
-            <button className={`button ${styles['nav-button']}`}>Sign In</button>
-            <button className={`button ${styles['nav-button']}`}>Register</button>
+                </div>
         </div>
     );
 }

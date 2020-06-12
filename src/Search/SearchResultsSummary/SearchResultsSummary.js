@@ -21,7 +21,7 @@ export function SearchResultsSummary(props) {
             <div >
 
                 <div >
-
+                    <span className={styles['white']}> You searched for Markets with  </span>
                     {props.products.includes('BakedGoods')?<span className={`tag ${styles['business-tag']} subtitle`}>Baked Goods 🥧 </span>:''}
                     {props.products.includes('Cheese')?<span className={`tag ${styles['business-tag']}`}>Cheese 🧀 </span>:''}
                     {props.products.includes('Crafts')?<span className={`tag ${styles['business-tag']}`}>Crafts 🎨</span>:''}
@@ -53,9 +53,7 @@ export function SearchResultsSummary(props) {
                     {props.products.includes('WildHarvested')?<span className={`tag ${styles['business-tag']}`}>Wild Harvested 🍇🥦</span>:''}
 
 
-                </div>
 
-                <div className="buttons has-addons">
                     {props.Credit>0?<span className={`tag ${styles['business-tag']}`}>Credit Card </span>:''}{props.Credit>0}
                     {props.WIC>0?<span className={`tag ${styles['business-tag']}`}>WIC  </span>:''}
                     {props.WICcash>0?<span className={`tag ${styles['business-tag']}`}>WICcash </span>:''}
