@@ -3,6 +3,7 @@ import { TopNav } from './TopNav/TopNav';
 import logo from '../assets/logo.png';
 import styles from './LandingPage.module.css'
 import { SearchBar } from '../SearchBar/SearchBar';
+import {Map} from  '../SearchBar/Map'
 import renderHTML from 'react-render-html';
 
 
@@ -34,7 +35,7 @@ export function LandingPage() {
                 <TopNav/>
                 <img src={logo} className={styles.logo} alt='logo'/>
                 <SearchBar search={search} />
-            <map/>
+                 <Map/>
             </div>
         </div>
     );
